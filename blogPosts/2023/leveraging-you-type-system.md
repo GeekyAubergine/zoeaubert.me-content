@@ -2,7 +2,7 @@
 slug: leveraging-your-type-system
 date: 2023-06-23T18:00
 title: Leveraging Your Type System
-description: Use your type system and compiler to prevent invalid states and improve the reliability of your code
+description: When programming it is easy to find yourself in unexpected or invalid states. Using your compiler and type system, you can make these invalid states irrepresentable and prevent you from entering them and stopping bugs at the compiler rather than detecting them in production.
 tags: ['Programming']
 hero: 'https://cdn.geekyaubergine.com/2023/83bbe743c32.png'
 heroAlt: 'Screen shot of 3 lines of code. The first line reads "export type Ok<T> = { ok: true; value: T }", the second line reads "export type Err<E> = { ok: false; error: E }" and the third line reads "export type Result<T, E> = Ok<T> | Err<E>"'

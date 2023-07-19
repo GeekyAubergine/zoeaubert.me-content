@@ -8,13 +8,13 @@ tags: ["Programming", "Languages"]
 
 ## Disclaimer/Errata
 
-This post was retrieved from the archives of and old website. I wrote this just after Christmas during my first year of University, as such it wasn't it's best. I've left it as true to the origial as possible, though I have cleared up some aggregious errors.
+This post was retrieved from the archives of an old website. I wrote this just after Christmas during my first year of University, as such it wasn't it's best. I've left it as true to the origial as possible, though I have cleared up some aggregious errors.
 
-Unlike the original, I have also included the (terrible) source code (see bottom). No I don't know why I chose Java and no, I don't think I could get it working now. Hopefully you'll find it a least a bit amusing.
+Unlike the original, I have also included the (terrible) source code (see bottom). No I don't know why I chose Java. Hopefully you'll find it a least a bit amusing.
 
 ---
 
-I have created something both glorious and terrible, and I have called it Four
+I have created something both glorious and terrible, and I have called it Four.
 
 What is Four? That's a good question. Four came about as a result of me showing a friend [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck). This spawned an idea, what if we could make something more difficult, more convoluted, thus Four was born. At the time we happened to have also been discussing 4chan (I won't link you, don't worry), and the idea was put forward to create a language only using the letter 'b', to pay homage to /b on 4chan (if you don't already know what that is, ask a friend, I would advise against looking it up personally). It's probably occurred to you that using a single character would be essentially impossible, so the choice was made to use '/' instead of space as a separator, why, because it was kinder than using 'd' and tied in very nicely with the theme we were going for.
 

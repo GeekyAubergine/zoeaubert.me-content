@@ -2,7 +2,7 @@
 date: 2023-01-29T22:04
 slug: saving-my-chaos-knight
 title: Saving my Chaos Knight
-description: How I saved my broken Chaos Knight model with some stressful drilling
+description: During my recent house move I managed to snap the lance off of one of my Chaos Knights. Though some stressful drilling I was able to save it.
 tags: ['Warhammer', 'AgeOfSigmar', 'SlavesToDarkness']
 hero: 'https://cdn.geekyaubergine.com/2023/saving-my-chaos-knight/IMG_2656.JPG'
 heroAlt: 'Slaves to Darkness Chaos Knight in a top-down side-on perspective. In the background is a green and yellow cutting mat, several other models and some tools'
