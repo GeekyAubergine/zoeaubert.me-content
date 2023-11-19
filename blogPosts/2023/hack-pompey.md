@@ -3,7 +3,7 @@ slug: hack-pompey-2023
 date: 2023-03-25T22:30
 title: Hack Pompey 2023 - Blahbarian
 description: I attended my first hackathon, and we made a game about a Norwegian barbarian shark who destroys furniture using TypeScript and canvas.
-tags: ['Programming', 'GameDev']
+tags: ['Programming', 'GameDev', 'Hackathon']
 hero: "https://cdn.geekyaubergine.com/2023/04572345cced.png"
 heroAlt: "Two pixel art blue sharks wearing a barbarian horned had and a white shield with blue cross and red edging"
 heroWidth: 256
@@ -18,7 +18,7 @@ tldr: We made a [Vampire Survivors](https://store.steampowered.com/app/1794680/V
 
 You can [play it here](https://zoeaubert.me/projects/blahbarian-hackathon/). Warning that the noises are pretty loud.
 
-The code is available [here](https://github.com/GeekyAubergine/blahbarian/tree/hackathon).
+The code is available on [Github](https://github.com/GeekyAubergine/blahbarian/tree/hackathon).
 
 ## The Team
 
