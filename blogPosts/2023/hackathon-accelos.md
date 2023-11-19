@@ -10,6 +10,8 @@ heroWidth: 980
 heroHeight: 449
 ---
 
+![Screen shot of a basic operating system interface listing Main, Files and Email on the left and side. On the right hand side a maze with various coloured circles and walls](https://cdn.geekyaubergine.com/2023/11/19/2023-11-19T22.55.24.png)
+
 Yesterday, I attended a hackathon with the theme "Silly Interfaces". 
 
 TLDR: I created a game where you had to balance a blob through a maze, changing its colour to match the colour of the option you want to select from an Operating System (OS) menu. The game is played on the browser, but the balance controls are controlled by tilting your phone using a companion app (not included). 
