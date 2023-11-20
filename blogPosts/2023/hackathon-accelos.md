@@ -2,7 +2,7 @@
 slug: hackathon-accelos
 date: 2023-11-19T23:30
 title: Hackathon - AccelOS
-description: I attended a hackathon with the theme "Silly Interfaces" and created a balance-based input for a simple operating system.
+description: I attended a hackathon with the theme Silly Interfaces and created a balance-based input for a simple operating system.
 tags: ['Programming', 'GameDev', 'Hackathon']
 hero: "https://cdn.geekyaubergine.com/2023/11/19/2023-11-19T22.55.24.png"
 heroAlt: "Screen shot of a basic operating system interface listing Main, Files and Email on the left and side. On the right hand side a maze with various coloured circles and walls"
