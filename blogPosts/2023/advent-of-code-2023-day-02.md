@@ -3,7 +3,7 @@ slug: advent-of-code-2023-day-02
 date: 2023-12-02T18:00
 title: Advent of Code 2023 - Day 02
 description: A discussion of my solution to Advent of Code 2023 - Day 02. This post contains spoilers
-tags: ['Programming', 'AdventOfCode']
+tags: ['Programming', 'AdventOfCode', 'Rust']
 ---
 [Advent of Code](https://adventofcode.com/) is a yearly programming challenge. See my [previous post](https://zoeaubert.me/blog/advent-of-code-2023-day-01/) to see how the project is set up.
 
@@ -549,10 +549,10 @@ I did try going further with the optimisation for part 1, but no changes I made 
 ## Results
 
 ```
-day_02         fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ part1       77.79 µs      │ 197 µs        │ 159.3 µs      │ 142.4 µs      │ 100     │ 100
-├─ part1_opt   53.41 µs      │ 82.79 µs      │ 60.08 µs      │ 61.02 µs      │ 100     │ 100
-├─ part1_opt2  36.66 µs      │ 43.2 µs       │ 37.08 µs      │ 37.45 µs      │ 100     │ 100
-├─ part2       104.3 µs      │ 144.4 µs      │ 112.8 µs      │ 116.2 µs      │ 100     │ 100
-╰─ part2_opt   49.2 µs       │ 58.99 µs      │ 49.49 µs      │ 49.96 µs      │ 100     │ 100
+day_02         fastest       │ slowest       │ median        │ mean
+├─ part1       77.79 µs      │ 197 µs        │ 159.3 µs      │ 142.4 µs
+├─ part1_opt   53.41 µs      │ 82.79 µs      │ 60.08 µs      │ 61.02 µs
+├─ part1_opt2  36.66 µs      │ 43.2 µs       │ 37.08 µs      │ 37.45 µs
+├─ part2       104.3 µs      │ 144.4 µs      │ 112.8 µs      │ 116.2 µs 
+╰─ part2_opt   49.2 µs       │ 58.99 µs      │ 49.49 µs      │ 49.96 µs
 ```

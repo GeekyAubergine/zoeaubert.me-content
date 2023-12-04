@@ -3,7 +3,7 @@ slug: advent-of-code-2023-day-01
 date: 2023-12-01T13:00
 title: Advent of Code 2023 - Day 01
 description: A discussion of my solution to Advent of Code 2023 - Day 01. This post contains spoilers
-tags: ['Programming', 'AdventOfCode']
+tags: ['Programming', 'AdventOfCode', 'Rust']
 ---
 [Advent of Code](https://adventofcode.com/) is a yearly programming challenge. I've followed other people doing it before and thought I'd take a crack at it this year. Let's see how far I get. It goes without saying that this post will contain spoilers.
 
@@ -195,9 +195,9 @@ I never properly explored the RegEx solution, maybe it was better, but I would b
 ## Results
 
 ```
-day_01        fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ part1      104.9 µs      │ 126.7 µs      │ 106.2 µs      │ 108.8 µs      │ 100     │ 100
-├─ part1_opt  43.83 µs      │ 60.29 µs      │ 44.08 µs      │ 45.45 µs      │ 100     │ 100
-├─ part2      214.2 µs      │ 246.9 µs      │ 217.1 µs      │ 220 µs        │ 100     │ 100
-╰─ part2_opt  71.24 µs      │ 97.7 µs       │ 71.83 µs      │ 74.24 µs      │ 100     │ 100
+day_01        fastest       │ slowest       │ median        │ mean
+├─ part1      104.9 µs      │ 126.7 µs      │ 106.2 µs      │ 108.8 µs
+├─ part1_opt  43.83 µs      │ 60.29 µs      │ 44.08 µs      │ 45.45 µs
+├─ part2      214.2 µs      │ 246.9 µs      │ 217.1 µs      │ 220 µs
+╰─ part2_opt  71.24 µs      │ 97.7 µs       │ 71.83 µs      │ 74.24 µs
 ```

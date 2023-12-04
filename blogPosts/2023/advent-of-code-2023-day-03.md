@@ -3,7 +3,7 @@ slug: advent-of-code-2023-day-03
 date: 2023-12-03T14:55
 title: Advent of Code 2023 - Day 03
 description: A discussion of my solution to Advent of Code 2023 - Day 03. This post contains spoilers. I also have a test case that might help you if you're stuck like I was.
-tags: ['Programming', 'AdventOfCode']
+tags: ['Programming', 'AdventOfCode', 'Rust']
 ---
 [Advent of Code](https://adventofcode.com/) is a yearly programming challenge. See my [day 01 post](https://zoeaubert.me/blog/advent-of-code-2023-day-01/) to see how the project is set up.
 
