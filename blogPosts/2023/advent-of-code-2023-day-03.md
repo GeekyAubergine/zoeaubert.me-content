@@ -596,8 +596,9 @@ This has been a lesson in not trusting their example input to cover all possible
 
 ## Results
 
-| Part | Median | Mean |
-| - | - | - |
-| part1 | 7.342 ms | 7.564 ms|
-|part1_opt|124.1 µs  | 126.7 µs|
-|part_2|6.355 ms     |6.358 ms|
+```
+day_03        fastest       │ slowest       │ median        │ mean
+├─ part1      7.107 ms      │ 15.85 ms      │ 7.342 ms      │ 7.564 ms
+├─ part1_opt  123.7 µs      │ 150.4 µs      │ 124.1 µs      │ 126.7 µs 
+╰─ part2      6.111 ms      │ 6.834 ms      │ 6.355 ms      │ 6.358 ms
+```
