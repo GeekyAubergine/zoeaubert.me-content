@@ -9,6 +9,8 @@ tags: ['Programming', 'AdventOfCode']
 
 To view my [solution](https://github.com/GeekyAubergine/advent-of-code/tree/main/2023/day-03) in full check them out on Github
 
+> Updated 07:40 2023-12-04 with part 1 optimisation
+
 ## Initial solutions
 
 ### Part 1
@@ -402,7 +404,191 @@ This felt much easier than part 1, but I think that's because I didn't spend an 
 
 ## Optimisation
 
-I decided not to spend time optimising this today. I was too drained from inputting hundreds of numbers to find my bug. I might try it later, if so, I'll update this post. I'm sure there's lots to gain as my solution feels very slow.
+### Part1
+
+After a break, I decided to give optimisation another go.
+
+### Part2
+
+I have chosen not to optimise part 2 as I don't see a nice way to do it. I have some guesses, but they all look quite ugly.
+
+```rust
+struct Data {
+    symbol_map: Vec<bool>,
+    width: usize,
+}
+
+impl Data {
+    #[tracing::instrument]
+    fn new(input: &String) -> Self {
+        let is_symbol = input
+            .lines()
+            .flat_map(|line| line.chars())
+            .map(|c| is_symbol(Some(c)))
+            .collect::<Vec<_>>();
+        let width = input.lines().next().unwrap().len();
+
+        Self { width, symbol_map }
+    }
+
+    #[tracing::instrument]
+    fn is_symbol(&self, x: i32, y: i32) -> bool {
+        if x < 0 || y < 0 {
+            return false;
+        }
+
+        match self.symbol_map.get(y as usize * self.width + x as usize) {
+            Some(v) => *v,
+            None => false,
+        }
+    }
+}
+```
+
+This time, rather than accessing the strings as needed, I precompute whether or not a character is a symbol for the entire input. This may seem expensive, and I tried some other methods, but this came out the fastest. Doing this allows for fast lookups when processing the numbers.
+
+A small but non-insignificant change was the way I was calculating if a character is a symbol.
+
+```rust
+fn is_symbol(char: Option<char>) -> bool {
+    match char {
+        Some(c) => {
+            matches!(c, '-' | '%' | '+' | '=' | '*' | '/' | '$' | '#' | '&' | '@')
+        }
+        None => false,
+    }
+}
+```
+
+Rather than checking for any symbol, it only checks the ones present in the input. And thank you to clippy for suggesting the `matches!`, it's very cool (it expands to a match statement returning true for the items listed and false for everything else).
+
+Processing each line has become more complex. While the basic outline and operations remain unchanged, there's some extra fun.
+
+```rust
+fn parse_line(line: &str, y: i32, data: &Data) -> Vec<u32> {
+    let mut in_number = false;
+    let mut number_start = 0;
+    let mut adjacent_symbol = false;
+
+    let mut numbers = vec![];
+
+    for (i, c) in line.chars().enumerate() {
+        let i_as_i32 = i as i32;
+        if c.is_ascii_digit() {
+            if !in_number {
+                in_number = true;
+                number_start = i;
+
+                // Previous
+                if data.is_symbol(i_as_i32 - 1, y)
+                    || data.is_symbol(i_as_i32 - 1, y - 1)
+                    || data.is_symbol(i_as_i32 - 1, y + 1)
+                {
+                    adjacent_symbol = true;
+                }
+            }
+
+            // Above below
+            if (data.is_symbol(i_as_i32, y - 1)) || (data.is_symbol(i_as_i32, y + 1)) {
+                adjacent_symbol = true;
+            }
+        } else if in_number {
+            // Check self, above and below
+            if data.is_symbol(i_as_i32, y)
+                || data.is_symbol(i_as_i32, y - 1)
+                || data.is_symbol(i_as_i32, y + 1)
+            {
+                adjacent_symbol = true;
+            }
+
+            if adjacent_symbol {
+                numbers.push(line[number_start..i].parse().unwrap());
+            }
+
+            in_number = false;
+            adjacent_symbol = false;
+        }
+    }
+
+    if in_number
+        && (adjacent_symbol
+            || data.is_symbol(line.len() as i32 - 1, y - 1)
+            || data.is_symbol(line.len() as i32 - 1, y + 1))
+    {
+        numbers.push(line[number_start..].parse().unwrap());
+    }
+
+    numbers
+}
+```
+
+After finding the first digit like we did before, we then immediately look left and diagonally left to see if we can find a symbol.
+
+```rust
+if data.is_symbol(i_as_i32 - 1, y)
+	|| data.is_symbol(i_as_i32 - 1, y - 1)
+	|| data.is_symbol(i_as_i32 - 1, y + 1)
+{
+	adjacent_symbol = true;
+}
+```
+
+Then, for every digit following we do similar, and check above and below the current character.
+
+```rust
+if (data.is_symbol(i_as_i32, y - 1)) || (data.is_symbol(i_as_i32, y + 1)) {
+	adjacent_symbol = true;
+}
+```
+
+Then, once we've reached the end of the number, we have to check right, and diagonally right. But, we only know if we've reached the end of the number if we've seen a non-number character, so what we really need to do is check the current character, and above and below that, which has the same effect as checking right and diagonally because we're already one character to the right.
+
+```rust
+if data.is_symbol(i_as_i32, y)
+	|| data.is_symbol(i_as_i32, y - 1)
+	|| data.is_symbol(i_as_i32, y + 1)
+{
+	adjacent_symbol = true;
+}
+```
+
+The only thing to do then is not to fall prey to my earlier bug and also check if we've reached the end of the line but are still in a number. Again, here, we have to check above and below on the final character for a symbol.
+
+```rust
+if in_number
+	&& (adjacent_symbol
+		|| data.is_symbol(line.len() as i32 - 1, y - 1)
+		|| data.is_symbol(line.len() as i32 - 1, y + 1))
+{
+	numbers.push(line[number_start..].parse().unwrap());
+}
+```
+
+Combing it all together is then a simple case of:
+
+```rust
+pub fn process(input: &str) -> miette::Result<u32> {
+    let input = input
+        .lines()
+        .map(|line| line.trim())
+        .collect::<Vec<_>>()
+        .join("\n");
+
+    let data = Data::new(&input);
+
+    let sum = input
+        .lines()
+        .enumerate()
+        .flat_map(|(y, line)| parse_line(line, y as i32, &data))
+        .sum::<u32>();
+
+    Ok(sum)
+}
+```
+
+Using these techniques has yielded a rather silly performance increase of 59x, taking us from the ~7ms area to ~120µs.
+
+Overall, I think this is a fairly intuitive optimisation. But I am very pleased with the results. I'm also glad I did it the more over-engineered way first as I would likely have had an even worse time debugging this approach to find my bug.
 
 ## Additional Notes
 
@@ -410,8 +596,8 @@ This has been a lesson in not trusting their example input to cover all possible
 
 ## Results
 
-```
-day_03    fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ part1  7.141 ms      │ 17.01 ms      │ 7.377 ms      │ 7.513 ms      │ 100     │ 100
-╰─ part2  6.265 ms      │ 6.631 ms      │ 6.443 ms      │ 6.444 ms      │ 100     │ 100
-```
+| Part | Median | Mean |
+| - | - | - |
+| part1 | 7.342 ms | 7.564 ms|
+|part1_opt|124.1 µs  | 126.7 µs|
+|part_2|6.355 ms     |6.358 ms|
