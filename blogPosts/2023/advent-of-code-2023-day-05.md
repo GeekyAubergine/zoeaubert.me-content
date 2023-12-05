@@ -353,7 +353,7 @@ So, this went from 4 seeds to 424,459,107. And that's not the whole input. Oh bo
 
 I thought about it initially but decided I couldn't eyeball and optimise without a full rewrite, so I did the only logical thing. I brute forced it.
 
-Introducing [Rayon](https://github.com/rayon-rs/rayon), my beloved. tldr; it lets to parallelise iterators with almost zero changes. 
+Introducing [Rayon](https://github.com/rayon-rs/rayon), my beloved. tldr; it lets you parallelise iterators with almost zero changes. 
 
 ```rust
 pub fn process(input: &str) -> miette::Result<u64> {
