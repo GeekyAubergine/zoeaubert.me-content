@@ -7,7 +7,7 @@ tags: ['Programming', 'AdventOfCode', 'Rust']
 ---
 [Advent of Code](https://adventofcode.com/) is a yearly programming challenge. See my [day 01 post](https://zoeaubert.me/blog/advent-of-code-2023-day-01/) to see how the project is set up.
 
-To view my [solution](https://github.com/GeekyAubergine/advent-of-code/tree/main/2023/day-04) in full check them out on Github
+To view my [solution](https://github.com/GeekyAubergine/advent-of-code/tree/main/2023/day-04) in full check them out on GitHub. See my [previous posts](https://zoeaubert.me/tags/advent-of-code/) for other solutions.
 
 ## Initial solutions
 
