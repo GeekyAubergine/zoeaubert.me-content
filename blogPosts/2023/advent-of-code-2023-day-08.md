@@ -347,7 +347,7 @@ pub fn process(input: &str) -> Result<u64> {
 
 ## Optimisation
 
-I don't think there's anything you could optimise out here. Maybe there is though and It'd be fun to be corrected.
+I don't think there's anything you could optimise out here. Maybe there is though and it'd be fun to be corrected.
 
 ## Thoughts
 
