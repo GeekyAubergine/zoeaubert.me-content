@@ -314,7 +314,7 @@ The `Input` struct is definitely over-engineered. But it did make the "repeat th
 
 With those it was pretty easy to calculate the cycle length (distance to first "end" `Node`) and then get the LCM of them
 
-```
+```rust
 pub fn process(input: &str) -> Result<u64> {
     let mut lines = input.lines().map(|l| l.trim());
 
