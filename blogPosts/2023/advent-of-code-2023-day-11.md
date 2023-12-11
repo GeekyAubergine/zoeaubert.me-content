@@ -236,7 +236,7 @@ Cool. I was feeling good, I felt like I knew what twist was coming and was ready
 
 I then saw part 2. Each empty row/column isn't one additional empty row/column but is actually 1 million more rows/columns. This was not a twist I foresaw, and I knew immediately that my code would not support it.
 
-## Optimising (aka fixing past mistakes)
+## Optimisation (aka fixing past mistakes)
 
 I decided part 2 was impossible without fixing my previous mistakes, so I did this first, which is different to my usual approach.
 
