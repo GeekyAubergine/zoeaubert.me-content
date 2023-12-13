@@ -2,7 +2,7 @@
 slug: advent-of-code-is-not-healthy-for-me
 date: 2023-12-13T19:30
 title: Advent of Code 2023 is not healthy for me
-description: Advent of Code, while a fun challenge, is unhealthy for me, and I should not participate. It taps at a core part of my mentality, and it's not a part I should be feeding. CW: Mental health.
+description: Advent of Code, while a fun challenge, is unhealthy for me, and I should not participate. It taps at a core part of my mentality, and it's not a part I should be feeding. CW; Mental health.
 tags: ['Health', 'AdventOfCode']
 ---
 
