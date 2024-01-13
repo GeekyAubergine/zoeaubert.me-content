@@ -177,7 +177,3 @@ Much like last year, I'm not making any traditional resolutions. But I do have s
 1. Spend more time on things that actually bring me joy
 2. Paint and play a 2k point game with my [Confessors Space Marine army](/tags/confessors)
 3. Improve my health
-
-#blogpost 
-
-#📥  
