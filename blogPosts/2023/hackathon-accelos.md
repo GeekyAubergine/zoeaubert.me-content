@@ -18,7 +18,7 @@ TLDR: I created a game where you had to balance a blob through a maze, changing 
 
 You can [play the game](https://accelos.zoeaubert.me/) and [read the code](https://github.com/GeekyAubergine/accelo-os). To make it playable without a mobile device, I have changed the balance input to a keyboard input using WASD. To change the blob's colour, go over one of the coloured circles (you can go over multiple to combine colours to make the other colours). To select an option, you must go over the coloured square of the option you want, and your blob must be that colour.
 
-Why's it called AccelOO? Because Accelerometer OS. And yes, I realise now, after calling it that, that actually I'm using the gyroscope, not the accelerometer, but here we are 🤷‍♀️.
+Why's it called AccelOS? Because Accelerometer OS. And yes, I realise now, after calling it that, that actually I'm using the gyroscope, not the accelerometer, but here we are 🤷‍♀️.
 
 ## The Idea
 
